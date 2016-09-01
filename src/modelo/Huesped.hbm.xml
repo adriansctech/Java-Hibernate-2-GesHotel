@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 08-feb-2016 19:26:40 by Hibernate Tools 3.6.0 -->
+<hibernate-mapping>
+    <class name="modelo.Huesped" table="huesped" catalog="geshotel">
+        <id name="dni" type="string">
+            <column name="dni" length="9" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="habitacion" class="modelo.Habitacion" fetch="select">
+            <column name="habitacion" />
+        </many-to-one>
+        <property name="nombre" type="string">
+            <column name="nombre" length="45" />
+        </property>
+        <property name="apellidos" type="string">
+            <column name="apellidos" length="45" />
+        </property>
+        <property name="direccion" type="string">
+            <column name="direccion" length="200" />
+        </property>
+        <property name="fechaNac" type="timestamp">
+            <column name="fechaNac" length="19" />
+        </property>
+        <property name="poblacion" type="string">
+            <column name="poblacion" length="45" />
+        </property>
+        <property name="individual" type="java.lang.Character">
+            <column name="individual" length="1" />
+        </property>
+    </class>
+</hibernate-mapping>
